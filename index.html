@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Formulário de Inscrição</title>
+    <link rel="icon" href="./img/logo inova.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet'  href='css/style.css'>
+</head>
+
+
+
+<body>
+  <header></header>
+
+  <main>
+    
+    <div class="conteudo">
+      <form class="formulario">
+    
+        <section class="formulario__cabecalho"> 
+          <a class="formulario__cabecalho__voltar" href=""><img src="./img/arrow-left-02.png"> Voltar </a>
+          <h2 class="formulario__cabecalho__titulo">Formulário de inscrição</h2>
+          <p class="formulario__cabecalho__texto">Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
+        </section>
+    
+        <section class="formulario__informacoes">
+          <h4 class="formulario__subtitulo"> Informações do participante </h4>
+          <label class="formulario__label"> Nome Completo
+            <input class="formulario__input" id="nome" type="text" >
+            <p class="formulario__erro" id="erro-nome"></p>
+          </label>
+     
+          <label class="formulario__label"> Data de Nascimento
+            <input class="formulario__input" id="dataNascimento" type="text" >
+            <p class="formulario__erro" id="erro-dataNascimento"></p>
+          </label>
+     
+          <label class="formulario__label"> CPF
+            <input class="formulario__input" id="cpf" type="text" >
+            <p class="formulario__erro" id="erro-cpf"></p>
+          </label>
+     
+          <label class="formulario__label"> Sexo 
+            <select class="formulario__select" id="sexo">  
+              <img src="./img/arrow-down-01.png"> 
+              <option value="" selected disabled>Selecione uma opção</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Feminino">Feminino</option>
+              <option value="Outro">Outro</option>
+            </select>
+            <p class="formulario__erro" id="erro-sexo"></p>
+          </label>
+
+          <label class="formulario__label"> E-mail 
+            <input class="formulario__input" id="e-mail" type="text">
+            <p class="formulario__erro" id="erro-e-mail"></p>
+          </label>
+
+          <label class="formulario__label"> Telefone
+            <input class="formulario__input" id="telefone" type="text">
+            <p class="formulario__erro" id="erro-telefone"></p>
+          </label>
+
+          <label class="formulario__label"> Documento de Identidade 
+            <div class="formulario__upload"> 
+              <img class="formulario__upload__imagem" src="./img/cloud-upload.png">
+              <label class="formulario__upload__texto">Clique aqui para selecionar o arquivo </label>
+              <input class="formulario__upload__file" id="identidade" type="file">
+            </div>
+            <p class="formulario__erro" id="erro-identidade"></p>
+          </label>
+        </section>
+
+        <section class="formulario__endereco">
+          <h4 class="formulario__subtitulo"> Endereço Residencial</h4>
+    
+          <label class="formulario__label"> CEP
+            <input class="formulario__input" id="cep" type="text">
+            <p class="formulario__erro" id="erro-cep"></p>
+          </label>
+        
+          <div class="formulario__espacamento"> 
+            <label class="formulario__label"> Rua
+              <input class="formulario__input" id="rua" type="text">
+              <p class="formulario__erro" id="erro-rua"></p>
+            </label>
+     
+            <label class="formulario__label"> Número 
+              <input class="formulario__input" id= "numero" type="text">
+              <p class="formulario__erro" id="erro-numero"></p>
+            </label>
+          </div>
+
+          <div class="formulario__espacamento">
+            <label class="formulario__label"> Cidade 
+              <input class="formulario__input" id="cidade" type="text">
+              <p class="formulario__erro" id="erro-cidade"></p>
+            </label>
+
+            <label class="formulario__label"> Estado 
+              <input class="formulario__input" id="estado" type="text">
+              <p class="formulario__erro" id="erro-estado"></p>
+            </label>
+          </div>
+
+          <label class="formulario__label"> Comprovante de Residência 
+            <div class="formulario__upload">
+              <img class="formulario__upload__imagem" src="./img/cloud-upload.png" alt="Ícone de upload">
+              <label for="comprovante" class="formulario__upload__texto">Clique aqui para selecionar o arquivo</label>
+              <input id="comprovante" class="formulario__upload__file" type="file">
+            </div>
+            <p class="formulario__erro" id="erro-comprovante"></p>
+          </label>
+        </section>
+     
+        <section class="formulario__trilhas">
+          <h4 class="formulario__subtitulo"> Trilhas de Aprendizagem </h4>
+            <label class="formulario__label">Selecione apenas uma trilha</label>
+            <p class="formulario__erro" id="erro-trilha"></p>
+          
+          <div class="formulario__espacamento">
+            <div class="formulario__trilhas__opcoes">
+              <input type="radio" id="front-end" name="trilha" value="front-end">
+              <label for="front-end" > </label>
+              <label class="formulario__trilhas__nome">
+                <img src="./img/front-end.png" alt="Ícone Front-end">
+                Programação Front-end
+              </label> 
+            </div>
+          
+            <div class="formulario__trilhas__opcoes">
+              <input type="radio" id="back-end" name="trilha" value="back-end">
+              <label for="back-end" > </label>
+              <label class="formulario__trilhas__nome">
+                <img src="./img/back-end.png" alt="Ícone Back-end">
+                Programação Back-end
+              </label>
+            </div>
+          </div>
+        
+          <div class="formulario__espacamento">
+            <div class="formulario__trilhas__opcoes">
+              <input type="radio" id="jogos" name="trilha" value="jogos">
+              <label for="jogos" > </label>
+              <label class="formulario__trilhas__nome">
+                <img src="./img/jogos.png" alt="Ícone Jogos">
+                Programação de Jogos
+              </label>
+            </div>
+        
+            <div class="formulario__trilhas__opcoes">
+              <input type="radio" id="design" name="trilha" value="design">
+              <label for="design"> </label>
+              <label class="formulario__trilhas__nome">
+                <img src="./img/ux.png" alt="Ícone Design">
+                Design e Experiência
+              </label>
+            </div>
+          </div>
+        
+          <div class="formulario__trilhas__opcoes">
+            <input type="radio" id="ciencia-dados" name="trilha" value="ciencia-dados">
+            <label for="ciencia-dados" > </label>
+              <label class="formulario__trilhas__nome">
+                <img src="./img/Frame 48095973.png" alt="Ícone Ciência de Dados">
+               Ciência de Dados
+              </label>
+            </div>
+
+        </section>
+      
+        <section class="formulario__declaracao">
+          <input class="formulario__declaracao__checkbox" id="declaracao" type="checkbox"/>
+          <label for="declaracao"></label>
+          <p>Declaro que li e concordo com os <a class="formulario__declaracao__link" href="#"> Termos e Condições </a> e com a <a class="formulario__declaracao__link" href="#"> Política de Privacidade. </a> </p>
+        </section>
+        
+          
+        <section class="formulario__inscricao">
+          <button class="formulario__botao" onclick="cancelar()" type="button">Cancelar</button>
+          <button class="formulario__botao" onclick="inscricao()" type="button">Fazer Inscrição</button>
+        </section>
+
+      </form>
+    </div>
+    
+    <div class="imagens">
+      <img class="ilustration" src="./img/Ilustration.png">
+      <img class="logo" src="./img/logo-trilhas-inova.png">
+    </div>
+
+  </main>
+
+  <footer> </footer>
+
+    
+  <script src='js/app.js'></script>
+</body>
+
+
+</html>

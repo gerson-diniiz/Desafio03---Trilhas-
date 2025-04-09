@@ -85,12 +85,4 @@ Candidatos aprovados confirmam matrícula pela plataforma. Um comprovante é ger
 - Site responsivo
 - Alerta de inscrição confirmada
 
-# 8. Entregas
-
-- Documento de requisitos atualizado
-- Projeto publicado no GitHub com histórico de commits
-- README completo
-- Vídeo de apresentação do sistema
-- Publicação no LinkedIn
-
 **São Luís – MA – 2025**

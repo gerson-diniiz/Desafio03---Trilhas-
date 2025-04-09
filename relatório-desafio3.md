@@ -1,88 +1,89 @@
 # SISTEMA DE INSCRIÇÃO E SELEÇÃO PARA O PROGRAMA TRILHAS INOVA
 
-**Instituto Estadual de Educação, Ciência e Tecnologia do Maranhão**  
+## Instituto Estadual de Educação, Ciência e Tecnologia do Maranhão  
 **Programa Trilhas Inova – Desafio 3**  
 **Disciplina:** Front-End  
 **Professor:** Aquino  
-**Autores:** Gerson Moisés Diniz Nascimento, Paulo Victor Rios Lima  
+
+**Alunos:**  
+- Gerson Moisés Diniz Nascimento  
+- Paulo Victor Rios Lima  
 
 
 # 1. Introdução
 
-O Governo do Estado do Maranhão, por meio da SECTI e FAPEMA, lançou um programa de formação para jovens e adultos na área de tecnologia. Com a alta demanda de inscritos, foi necessário desenvolver uma ferramenta digital que otimize a organização do processo seletivo.
+O Governo do Estado do Maranhão, por meio da SECTI e FAPEMA, lançou um programa de formação para jovens e adultos na área de tecnologia. Com o aumento no número de inscritos, é necessário um sistema digital que automatize o processo de inscrição e seleção, tornando-o eficiente, acessível e organizado.
 
 # 2. Objetivo do Sistema
 
-Desenvolver uma plataforma digital que automatize as etapas do processo seletivo: inscrição, testes e matrícula. A proposta visa oferecer uma solução acessível, segura e eficiente para os participantes e a equipe organizadora.
+Desenvolver uma plataforma digital que facilite o processo de inscrição, nivelamento, teste técnico, aprovação e matrícula dos participantes do Programa Trilhas Inova.
 
 # 3. Desafios e Necessidades
 
-- Volume de até 10.000 candidatos.
-- Acompanhamento em tempo real do status da inscrição.
-- Processamento automatizado de dados.
-- Facilidade de uso para públicos diversos.
+- Volume elevado de candidatos (até 10.000 por ano)
+- Agilidade no processamento das informações
+- Transparência no status da inscrição
+- Acessibilidade para usuários com diversos níveis de familiaridade digital
 
 # 4. Usuários e Perfis
 
- **4.1 Candidatos**
+**4.1 Candidatos**
 
-- Jovens e adultos (Ensino Médio completo ou em andamento).  
-- Com acesso à internet e níveis variados de familiaridade digital.
+- Jovens e adultos interessados nos cursos
+- Pessoas com ensino médio completo ou em andamento
 
- **4.2 Equipe Organizadora**
+**4.2 Equipe Organizadora**
 
-- Profissionais da SECTI/FAPEMA responsáveis por:  
-  - Gestão do sistema  
-  - Aplicação de testes  
-  - Divulgação de resultados  
-  - Comunicação com os candidatos
+- Membros da SECTI e FAPEMA
+- Responsáveis por análises, resultados e comunicação com os candidatos
 
 # 5. Funcionalidades Essenciais
 
-**Para Candidatos**
+**Para Candidatos:**
 
-- Cadastro e login (com ID de usuário e senha)
-- Preenchimento completo do formulário
-- Envio de documentos
-- Notificações automáticas
-- Testes online
-- Confirmação de inscrição
+- Criar conta e acessar plataforma
+- Preencher formulário e enviar documentos
+- Receber notificações de cada etapa
+- Realizar testes online
 
-**Para Equipe Organizadora**
+ **Para Organizadores:**
 
-- Acompanhamento de inscrições em tempo real
-- Filtros e análise de dados
-- Liberação e correção automática de testes
-- Publicação de resultados
-- Envio de comunicados
+- Monitorar e filtrar inscrições
+- Liberar e corrigir testes automaticamente
+- Publicar resultados
+- Enviar documentos e notificações
 
 # 6. Processo de Inscrição e Seleção
 
-# 6.1 Cadastro
+**6.1 Cadastro**
+- Criar conta com ID e senha
+- Preencher todos os campos obrigatórios
+- Verificação automática de e-mail válido
 
-O candidato cria conta com ID e senha. Validação de e-mail e obrigatoriedade de todos os campos.
+**6.2 Teste de Nivelamento**
+- Disponibilizado após inscrições
+- Realizado online com correção automática
 
-# 6.2 Teste de Nivelamento
+ **6.3 Teste Técnico**
+- Para classificados no nivelamento
+- Geração da lista final de aprovados
 
-Após o fim das inscrições, o sistema libera o teste. Resultados são processados automaticamente.
+**6.4 Matrícula**
+- Plataforma envia alerta de convocação
+- Geração de comprovante de matrícula
 
-# 6.3 Teste Técnico
+# 7. Melhorias Implementadas
 
-Liberado para os classificados no nivelamento. Após conclusão, o sistema gera a lista final.
-
-# 6.4 Matrícula
-
-Candidatos aprovados confirmam matrícula pela plataforma. Um comprovante é gerado.
-
-# 7. Melhorias na Versão 3
-
-- Validação de e-mail
-- Campos obrigatórios com mensagens de erro
-- ID de usuário e senha
-- Botão "Salvar"
+- Validação de campos obrigatórios
+- Exibição de mensagens de erro
+- Verificação de e-mail válido
+- Tela de login com ID e senha
 - Armazenamento temporário dos dados
-- Tela de login funcional
-- Site responsivo
-- Alerta de inscrição confirmada
+- Botão “Salvar”
+- Site responsivo (adaptação para celular e computador)
+- Alerta de confirmação de inscrição
+- Separação clara de etapas do processo
 
-**São Luís – MA – 2025**
+# 8. Conclusão
+
+O sistema proposto oferece uma solução eficiente para o gerenciamento do processo seletivo do Trilhas Inova. Com melhorias implementadas e novas funcionalidades, ele atende às necessidades tanto dos candidatos quanto da equipe organizadora, promovendo inclusão, acessibilidade e inovação no ensino.

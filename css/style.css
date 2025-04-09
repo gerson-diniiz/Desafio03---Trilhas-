@@ -103,6 +103,10 @@ main{
     font-size: var(--font-size-secondary);
 }
 
+.formulario__input__erro{
+    border: 2px solid var(--cor-semantic-error);
+}
+
 .formulario__erro{
     color: var(--cor-semantic-error);
 }
@@ -239,6 +243,8 @@ main{
 .formulario__declaracao__checkbox {
     display: none;
 }
+
+
 
 .formulario__declaracao__checkbox + label:before {
     content: '';

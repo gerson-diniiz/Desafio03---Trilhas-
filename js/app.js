@@ -14,6 +14,7 @@ function inscricao (){
     let estado = document.getElementById('estado').value;
     let comprovante = document.getElementById('comprovante').files;
     let trilha = document.querySelector('input[name="trilha"]:checked') ? document.querySelector('input[name="trilha"]:checked').value : '';
+    let declaracao = document.getElementById('declaracao');
 
     //Chamadas de verificação
    limparMensagens();
@@ -31,9 +32,10 @@ function inscricao (){
    verificaEstado(estado);
    verificaComprovante(comprovante);
    verificaTrilha(trilha);
+   verificaDeclaracao(declaracao);
 
     //Verifica se tem algum erro
-    let campos = ['nome', 'dataNascimento', 'cpf', 'sexo', 'e-mail', 'telefone', 'identidade', 'cep', 'rua', 'numero', 'cidade', 'estado', 'comprovante', 'trilha'];
+    let campos = ['nome', 'dataNascimento', 'cpf', 'sexo', 'e-mail', 'telefone', 'identidade', 'cep', 'rua', 'numero', 'cidade', 'estado', 'comprovante', 'trilha', 'declaracao'];
     let temErro = false;
 
     campos.forEach(campo => {
@@ -75,10 +77,10 @@ function verificaSexo(sexo) {
 }
 
 function verificaEmail(email) {
-   if (email === '') {
-       mensagemErro('e-mail', 'Preencha com seu e-mail');
-   }else if (!email.includes('@')) {
-    mensagemErro('e-mail', 'Insira um e-mail válido');
+    if (email === '') {
+        mensagemErro('e-mail', 'Preencha com seu e-mail');
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        mensagemErro('e-mail', 'Insira um e-mail válido');
     }
 }
 
@@ -136,10 +138,18 @@ function verificaTrilha(trilha) {
     }
 }
 
+function verificaDeclaracao(declaracao){
+    if(!declaracao.checked){
+        mensagemErro('declaracao', 'Aceite os termos e condições');
+    }
+}
+
 function mensagemErro(campo, mensagem) {
     document.getElementById(`erro-${campo}`).textContent = mensagem;
     let input = document.getElementById(campo);
-    input.style.border = '2px solid #DC2626';
+    if (input) {
+        input.classList.add('formulario__input__erro');
+    }
 }
 
 function cancelar() {
@@ -166,7 +176,7 @@ function cancelar() {
 }
 
 function limparMensagens(){
-    let campos = ['nome', 'dataNascimento', 'cpf', 'sexo', 'e-mail', 'telefone', 'identidade', 'cep', 'rua', 'numero', 'cidade', 'estado', 'comprovante', 'trilha'];
+    let campos = ['nome', 'dataNascimento', 'cpf', 'sexo', 'e-mail', 'telefone', 'identidade', 'cep', 'rua', 'numero', 'cidade', 'estado', 'comprovante', 'trilha', 'declaracao'];
     campos.forEach(campo => {
         document.getElementById(`erro-${campo}`).textContent = '';
         let input = document.getElementById(campo);

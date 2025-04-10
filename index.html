@@ -12,15 +12,16 @@
 
 
 <body>
-  <header></header>
+    <header></header>
 
   <main>
     
     <div class="conteudo">
       <form class="formulario">
-    
+
+
         <section class="formulario__cabecalho"> 
-          <a class="formulario__cabecalho__voltar" href=""><img src="./img/arrow-left-02.png"> Voltar </a>
+          <a class="formulario__cabecalho__voltar" href="/login.html"><img src="./img/arrow-left-02.png"> Voltar </a>
           <h2 class="formulario__cabecalho__titulo">Formulário de inscrição</h2>
           <p class="formulario__cabecalho__texto">Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
         </section>
@@ -40,6 +41,11 @@
           <label class="formulario__label"> CPF
             <input class="formulario__input" id="cpf" type="text" >
             <p class="formulario__erro" id="erro-cpf"></p>
+          </label>
+
+          <label class="formulario__label"> Senha
+            <input class="formulario__input" id="senha" type="text" >
+            <p class="formulario__erro" id="erro-senha"></p>
           </label>
      
           <label class="formulario__label"> Sexo 
@@ -181,6 +187,7 @@
           
         <section class="formulario__inscricao">
           <button class="formulario__botao" onclick="cancelar()" type="button">Cancelar</button>
+          <button class="formulario__botao" onclick="salvarDados()" type="button">Salvar</button>
           <button class="formulario__botao" onclick="inscricao()" type="button">Fazer Inscrição</button>
         </section>
 

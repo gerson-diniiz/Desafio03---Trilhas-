@@ -1,0 +1,97 @@
+
+:root{
+    --cor-brand-primary: #F3541C;
+    --cor-brand-secondary: #E43A12 ;
+    --cor-text-primary: #292524;
+    --cor-text-secondary: #57534E;
+    --cor-surface-primary: #FFFFFF;
+    --cor-stroke-default: #D6D3D1;
+    --cor-stroke-highlight: #F3541C;
+    --cor-semantic-error: #DC2626;
+    --font-size-primary: 1.5rem;
+    --font-size-secondary: 1rem;
+    --font-size-tertiary: 0.875rem;
+    --font-family-primary: "Poppins", sans-serif;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    background: var(--cor-brand-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .login__input {
+    width: 17rem;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border-radius: 8px;
+    color: var(--cor-text-primary);
+    border: 2px solid var(--cor-stroke-default);
+    font-family: var(--font-family-primary);
+    font-weight: 400;
+    font-size: var(--font-size-secondary);
+  }
+
+  .login__input:hover{
+    border: 2px solid var(--cor-stroke-highlight);
+  }
+
+  .login__botao {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--cor-surface-primary);
+    border: 1px solid var(--cor-brand-secondary);
+    border-radius: 8px;
+    color: var(--cor-stroke-highlight);
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+    .login__botao:hover{
+    background-color: var(--cor-brand-secondary);
+    color: var(--cor-surface-primary);
+}
+
+  .mensagem {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .link{
+    text-decoration: none;
+    color: var(--cor-text-secondary);
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .link:hover{
+    color: var(--cor-brand-secondary);
+   }
+
+   .formulario__input__erro{
+    border: 2px solid var(--cor-semantic-error);
+}
+
+.formulario__erro{
+    color: var(--cor-semantic-error);
+}

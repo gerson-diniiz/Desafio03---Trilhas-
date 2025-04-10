@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='/css/login.css'>
+</head>
+<body>
+
+    <main>
+    <div class="container">
+        <h2 class="formulario__cabecalho__titulo">Login</h2>
+        <input type="text" id="cpf" class="login__input" placeholder="CPF">
+        <p class="formulario__erro" id="erro-cpf"></p>
+        <input type="password" id="senha" class="login__input" placeholder="Senha">
+        <p class="formulario__erro" id="erro-senha"></p>
+        <a class="link" href="/index.html"> Cadastrar </a>
+        <button class="login__botao" onclick="login()">Login</button>
+        <div class="mensagem" id="erro-mensagem"></div>
+    </div>
+    
+    </main>
+
+    <script src='/js/app.js'></script>
+</body>
+</html>

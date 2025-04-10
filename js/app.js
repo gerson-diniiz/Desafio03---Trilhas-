@@ -1,6 +1,7 @@
 function inscricao (){
-    // Conseguindo as informações
+ 
     let nome = document.getElementById('nome').value;
+    let senha = document.getElementById('senha').value;
     let dataNascimento = document.getElementById('dataNascimento').value;
     let cpf = document.getElementById('cpf').value;
     let sexo = document.getElementById('sexo').value;
@@ -16,9 +17,9 @@ function inscricao (){
     let trilha = document.querySelector('input[name="trilha"]:checked') ? document.querySelector('input[name="trilha"]:checked').value : '';
     let declaracao = document.getElementById('declaracao');
 
-    //Chamadas de verificação
    limparMensagens();
    verificaNome(nome);
+   verificaSenha(senha);
    verificaDataNascimento(dataNascimento);
    verificaCPF(cpf);
    verificaSexo(sexo);
@@ -34,8 +35,7 @@ function inscricao (){
    verificaTrilha(trilha);
    verificaDeclaracao(declaracao);
 
-    //Verifica se tem algum erro
-    let campos = ['nome', 'dataNascimento', 'cpf', 'sexo', 'e-mail', 'telefone', 'identidade', 'cep', 'rua', 'numero', 'cidade', 'estado', 'comprovante', 'trilha', 'declaracao'];
+    let campos = ['nome', 'senha', 'dataNascimento', 'cpf', 'sexo', 'e-mail', 'telefone', 'identidade', 'cep', 'rua', 'numero', 'cidade', 'estado', 'comprovante', 'trilha', 'declaracao'];
     let temErro = false;
 
     campos.forEach(campo => {
@@ -47,6 +47,7 @@ function inscricao (){
 
     if (!temErro) {
         alert('Inscrição efetuada com sucesso!');
+        salvarDados();
     }
 }
 
@@ -54,6 +55,14 @@ function verificaNome(nome) {
    if (nome === '') {
        mensagemErro('nome', 'Preencha com seu nome completo');
    }
+}
+
+function verificaSenha(senha) {
+    if (senha === '') {
+        mensagemErro('senha', 'Preencha com sua senha');
+    } else if (senha.length < 6) {
+        mensagemErro('senha', 'A senha deve ter pelo menos 6 caracteres');
+    }
 }
 
 function verificaDataNascimento(dataNascimento) {
@@ -154,6 +163,7 @@ function mensagemErro(campo, mensagem) {
 
 function cancelar() {
     document.getElementById('nome').value = '';
+    document.getElementById('senha').value = '';
     document.getElementById('dataNascimento').value = '';
     document.getElementById('cpf').value = '';
     document.getElementById('sexo').value = '';
@@ -176,12 +186,104 @@ function cancelar() {
 }
 
 function limparMensagens(){
-    let campos = ['nome', 'dataNascimento', 'cpf', 'sexo', 'e-mail', 'telefone', 'identidade', 'cep', 'rua', 'numero', 'cidade', 'estado', 'comprovante', 'trilha', 'declaracao'];
+    let campos = ['nome', 'senha', 'dataNascimento', 'cpf', 'sexo', 'e-mail', 'telefone', 'identidade', 'cep', 'rua', 'numero', 'cidade', 'estado', 'comprovante', 'trilha', 'declaracao'];
     campos.forEach(campo => {
         document.getElementById(`erro-${campo}`).textContent = '';
         let input = document.getElementById(campo);
         if(input) {
-            input.style.border = '';
+            input.classList.remove('formulario__input__erro');
         }
     });
 }
+
+function salvarDados(){
+    let cpf = document.getElementById('cpf').value.trim();
+    let senha = document.getElementById('senha').value.trim();
+
+    verificaCPF(cpf);
+    verificaSenha(senha);
+
+    if (cpf !== '' && senha !== '') {
+        
+        localStorage.setItem('cpf', cpf);
+        localStorage.setItem('senha', senha);
+
+  
+        localStorage.setItem('nome', document.getElementById('nome').value.trim());
+        localStorage.setItem('dataNascimento', document.getElementById('dataNascimento').value);
+        localStorage.setItem('sexo', document.getElementById('sexo').value);
+        localStorage.setItem('email', document.getElementById('e-mail').value.trim());
+        localStorage.setItem('telefone', document.getElementById('telefone').value.trim());
+        localStorage.setItem('cep', document.getElementById('cep').value.trim());
+        localStorage.setItem('rua', document.getElementById('rua').value.trim());
+        localStorage.setItem('numero', document.getElementById('numero').value.trim());
+        localStorage.setItem('cidade', document.getElementById('cidade').value.trim());
+        localStorage.setItem('estado', document.getElementById('estado').value.trim());
+
+        let trilhaSelecionada = document.querySelector('input[name="trilha"]:checked');
+        if (trilhaSelecionada) {
+            localStorage.setItem('trilha', trilhaSelecionada.value);
+        }
+
+        let declaracao = document.getElementById('declaracao').checked;
+        localStorage.setItem('declaracao', declaracao);
+
+        window.location.href = "/login.html";
+    }
+}
+
+function login(){
+    console.log("Função login() chamada");
+
+    let cpf = document.getElementById('cpf').value.trim();
+    let senha = document.getElementById('senha').value.trim();
+
+    const cpfArmazenado = localStorage.getItem('cpf');
+    const senhaArmazenada = localStorage.getItem('senha');
+
+    if (cpf === cpfArmazenado && senha === senhaArmazenada) {
+        alert('Login realizado com sucesso!');
+        window.location.href = "/index.html";
+        restaurarDados();
+    } else {
+        mensagemErro('mensagem', 'CPF ou senha incorretos');
+    }
+}
+
+function restaurarDados() {
+    const campos = [
+        'nome',
+        'dataNascimento',
+        'cpf',
+        'sexo',
+        'e-mail',
+        'telefone',
+        'cep',
+        'rua',
+        'numero',
+        'cidade',
+        'estado',
+        'senha'
+    ];
+
+    campos.forEach(campo => {
+        const valor = localStorage.getItem(campo);
+        if (valor !== null && document.getElementById(campo)) {
+            document.getElementById(campo).value = valor;
+        }
+    });
+
+    const declaracao = localStorage.getItem('declaracao') === 'true';
+    const inputDeclaracao = document.getElementById('declaracao');
+    if (inputDeclaracao) {
+        inputDeclaracao.checked = declaracao;
+    }
+
+    const trilha = localStorage.getItem('trilha');
+    if (trilha) {
+        const inputTrilha = document.querySelector(`input[name="trilha"][value="${trilha}"]`);
+        if (inputTrilha) inputTrilha.checked = true;
+    }
+}
+
+window.addEventListener('DOMContentLoaded', restaurarDados);

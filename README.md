@@ -3,7 +3,7 @@
 
 ## 📌Sobre o projeto
 
-Este projeto é um formulário de inscrição interativo desenvolvido com HTML, CSS e JavaScript, permitindo que os usuários preencham seus dados pessoais, enviem documentos e escolham uma trilha de aprendizagem. O sistema realiza validações para garantir que todos os campos obrigatórios sejam preenchidos corretamente.
+Este projeto é um formulário de inscrição interativo desenvolvido com HTML, CSS e JavaScript, permitindo que os usuários preencham seus dados pessoais, enviem documentos e escolham uma trilha de aprendizagem. O sistema realiza validações para garantir que todos os campos obrigatórios sejam preenchidos corretamente, além de salvar temporariamente os dados preenchidos para reutilização nas telas de formulário e login.
 
 ## 🔨Funcionalidades do projeto
 
@@ -18,6 +18,8 @@ Este projeto é um formulário de inscrição interativo desenvolvido com HTML, 
 - __Exibição de mensagens de erro__ quando um campo estiver incorreto ou não preenchido.
 
 - __Função de limpeza de formulário e mensagens de erro__.
+
+-__Armazenamento Temporário de dados__ para facilitar o preenchimento e login.
 
 
 ## ✔️ Técnicas e tecnologias utilizadas

@@ -38,7 +38,9 @@ main{
 }
 
 .formulario{
-    width: 33rem;
+    max-width: 33rem;
+    width: 100%;
+    padding: 0 16px;
     display: flex;
     flex-direction: column;
     gap: 48px;
@@ -167,7 +169,8 @@ main{
     gap: 24px;
 }
 
-.formulario__espacamento{
+.formulario__espacamento,
+.formulario__espacamento__trilhas{
     display: flex;
     gap: 12px;
 }
@@ -241,8 +244,6 @@ main{
 .formulario__declaracao__checkbox {
     display: none;
 }
-
-
 
 .formulario__declaracao__checkbox + label:before {
     content: '';
@@ -329,15 +330,65 @@ main{
         width: 100%;
         display: flex;
         justify-content: center;
+       
     }
     
     .formulario{
+        width: 70%;
+        align-items: center;
         justify-content: center;
     }
-    
+
+    .formulario__input{
+        display: flex;
+        flex-direction: column;
+        width: 100%;  
+    }
+
+    .formulario__select,
+    .formulario__upload {
+        width: 104%;
+    }
+
+    #cidade, #rua, #numero, #estado{
+        width: 100%;
+    }
+
+    .formulario__espacamento,
+    .formulario__espacamento__trilhas{
+        flex-direction: column;
+    }
+
+    .formulario__espacamento__trilhas{
+        align-items: center;
+    }
+
+    .formulario__cabecalho,
+    .formulario__informacoes,
+    .formulario__endereco, 
+    .formulario__trilhas,
+    .formulario__declaracao{
+        width: 100%;
+    }
+
+    .formulario__trilhas__opcoes{
+        width: 100%;
+    }
+
+    .formulario__inscricao{
+        display: flex;
+        flex-direction: column;
+    }
+
     .imagens{
         width: 100%;
         background-color: var(--cor-brand-primary);
         padding-bottom: 5%;
+    }
+    
+    .ilustration{
+        width: 50%;
+        height: auto;
+        display: block;
     }
 }

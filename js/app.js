@@ -183,6 +183,7 @@ function cancelar() {
     limparMensagens();
 
     alert('Inscrição cancelada');
+    window.location.href = "/login.html";
 }
 
 function limparMensagens(){
@@ -205,28 +206,28 @@ function salvarDados(){
 
     if (cpf !== '' && senha !== '') {
         
-        localStorage.setItem('cpf', cpf);
-        localStorage.setItem('senha', senha);
+            sessionStorage.setItem('cpf', cpf);
+            sessionStorage.setItem('senha', senha);
 
   
-        localStorage.setItem('nome', document.getElementById('nome').value.trim());
-        localStorage.setItem('dataNascimento', document.getElementById('dataNascimento').value);
-        localStorage.setItem('sexo', document.getElementById('sexo').value);
-        localStorage.setItem('email', document.getElementById('e-mail').value.trim());
-        localStorage.setItem('telefone', document.getElementById('telefone').value.trim());
-        localStorage.setItem('cep', document.getElementById('cep').value.trim());
-        localStorage.setItem('rua', document.getElementById('rua').value.trim());
-        localStorage.setItem('numero', document.getElementById('numero').value.trim());
-        localStorage.setItem('cidade', document.getElementById('cidade').value.trim());
-        localStorage.setItem('estado', document.getElementById('estado').value.trim());
+            sessionStorage.setItem('nome', document.getElementById('nome').value.trim());
+            sessionStorage.setItem('dataNascimento', document.getElementById('dataNascimento').value);
+            sessionStorage.setItem('sexo', document.getElementById('sexo').value);
+            sessionStorage.setItem('email', document.getElementById('e-mail').value.trim());
+            sessionStorage.setItem('telefone', document.getElementById('telefone').value.trim());
+            sessionStorage.setItem('cep', document.getElementById('cep').value.trim());
+            sessionStorage.setItem('rua', document.getElementById('rua').value.trim());
+            sessionStorage.setItem('numero', document.getElementById('numero').value.trim());
+            sessionStorage.setItem('cidade', document.getElementById('cidade').value.trim());
+            sessionStorage.setItem('estado', document.getElementById('estado').value.trim());
 
         let trilhaSelecionada = document.querySelector('input[name="trilha"]:checked');
         if (trilhaSelecionada) {
-            localStorage.setItem('trilha', trilhaSelecionada.value);
+                sessionStorage.setItem('trilha', trilhaSelecionada.value);
         }
 
         let declaracao = document.getElementById('declaracao').checked;
-        localStorage.setItem('declaracao', declaracao);
+            sessionStorage.setItem('declaracao', declaracao);
 
         window.location.href = "/login.html";
     }
@@ -238,8 +239,11 @@ function login(){
     let cpf = document.getElementById('cpf').value.trim();
     let senha = document.getElementById('senha').value.trim();
 
-    const cpfArmazenado = localStorage.getItem('cpf');
-    const senhaArmazenada = localStorage.getItem('senha');
+    verificaCPF(cpf);
+    verificaSenha(senha);
+
+    const cpfArmazenado =       sessionStorage.getItem('cpf');
+    const senhaArmazenada =     sessionStorage.getItem('senha');
 
     if (cpf === cpfArmazenado && senha === senhaArmazenada) {
         alert('Login realizado com sucesso!');
@@ -267,19 +271,19 @@ function restaurarDados() {
     ];
 
     campos.forEach(campo => {
-        const valor = localStorage.getItem(campo);
+        const valor =       sessionStorage.getItem(campo);
         if (valor !== null && document.getElementById(campo)) {
             document.getElementById(campo).value = valor;
         }
     });
 
-    const declaracao = localStorage.getItem('declaracao') === 'true';
+    const declaracao =      sessionStorage.getItem('declaracao') === 'true';
     const inputDeclaracao = document.getElementById('declaracao');
     if (inputDeclaracao) {
         inputDeclaracao.checked = declaracao;
     }
 
-    const trilha = localStorage.getItem('trilha');
+    const trilha =      sessionStorage.getItem('trilha');
     if (trilha) {
         const inputTrilha = document.querySelector(`input[name="trilha"][value="${trilha}"]`);
         if (inputTrilha) inputTrilha.checked = true;

@@ -1,3 +1,4 @@
+![Capa do Desafio 3 Trilhas](capa.jpeg)
 
 # __Projeto de Formulário de Inscrição__
 
@@ -19,7 +20,7 @@ Este projeto é um formulário de inscrição interativo desenvolvido com HTML, 
 
 - __Função de limpeza de formulário e mensagens de erro__.
 
--__Armazenamento Temporário de dados__ para facilitar o preenchimento e login.
+- __Armazenamento Temporário de dados__ para facilitar o preenchimento e login.
 
 
 ## ✔️ Técnicas e tecnologias utilizadas
